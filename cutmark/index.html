@@ -452,6 +452,17 @@
                 border-radius: 14px;
 
                 background: var(--card);
+
+                transition:
+                    background 0.2s ease,
+                    border-color 0.2s ease;
+            }
+
+            /* Open release uses dark gray instead of purple */
+
+            .release[open] {
+                background: #1c1b21;
+                border-color: #302e36;
             }
 
             .release summary {
@@ -498,6 +509,11 @@
                 font-weight: 700;
             }
 
+            .release[open] .release-version {
+                background: #29272f;
+                color: #d8d5df;
+            }
+
             .release-title {
                 font-size: 15px;
                 font-weight: 600;
@@ -511,6 +527,10 @@
                 margin-top: 2px;
             }
 
+            .release[open] .release-date {
+                color: #aaa6b2;
+            }
+
             .release-arrow {
                 color: var(--muted);
 
@@ -520,6 +540,7 @@
             }
 
             .release[open] .release-arrow {
+                color: #d8d5df;
                 transform: rotate(180deg);
             }
 
@@ -527,6 +548,10 @@
                 padding: 0 24px 24px;
 
                 border-top: 1px solid var(--border);
+            }
+
+            .release[open] .release-body {
+                border-top-color: #302e36;
             }
 
             .release-content {
@@ -556,6 +581,10 @@
                 color: var(--muted);
 
                 font-size: 14px;
+            }
+
+            .release[open] .release-notes ul {
+                color: #aaa6b2;
             }
 
             .release-notes li {
@@ -691,7 +720,9 @@
 
                 <div class="nav-links">
                     <a href="#features">Features</a>
+
                     <a href="#how-it-works">How it works</a>
+
                     <a
                         href="#download"
                         style="
@@ -878,7 +909,7 @@
                     © <span id="year"></span>
                     Cutmark by
                     <a
-                        href="https://www.shakamal.com"
+                        href="https://shakamal.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         style="
@@ -985,6 +1016,25 @@
                                         ${formatDate(release.date)}
                                     </div>
                                 </div>
+
+                                ${
+                                    index === 0
+                                        ? `<span
+                                            style="
+                                                margin-left: 6px;
+                                                padding: 2px 6px;
+                                                border-radius: 4px;
+                                                background: var(--purple);
+                                                color: #fff;
+                                                font-size: 10px;
+                                                font-weight: 700;
+                                                letter-spacing: 0.04em;
+                                            "
+                                        >
+                                            LATEST
+                                        </span>`
+                                        : ""
+                                }
                             </div>
 
                             <div class="release-arrow">

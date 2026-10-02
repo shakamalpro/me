@@ -15,6 +15,7 @@
             rel="stylesheet"
         />
         <script src="https://unpkg.com/lucide@latest"></script>
+
         <style>
             html {
                 scroll-behavior: smooth;
@@ -29,10 +30,12 @@
                 --line: #232a34;
                 --accent: #c7d1db;
                 --accent-soft: #1a1f28;
+
                 --metal-1: #ffffff;
                 --metal-2: #d7dde3;
                 --metal-3: #8b96a3;
                 --metal-4: #eef1f5;
+
                 --metal-gradient: linear-gradient(
                     120deg,
                     var(--metal-1) 0%,
@@ -40,6 +43,7 @@
                     var(--metal-3) 55%,
                     var(--metal-4) 100%
                 );
+
                 --shadow: 5px 5px 0 #c7d1db;
                 --hover-ink: #05070c;
             }
@@ -194,6 +198,7 @@
                         0 0 6px 2px rgba(255, 255, 255, 0.85),
                         0 0 16px 5px rgba(255, 255, 255, 0.45);
                 }
+
                 50% {
                     opacity: 0.45;
                     box-shadow:
@@ -235,9 +240,11 @@
                 0% {
                     box-shadow: 0 0 0 rgba(238, 241, 245, 0);
                 }
+
                 35% {
                     box-shadow: 0 0 90px rgba(238, 241, 245, 0.6);
                 }
+
                 100% {
                     box-shadow: 0 0 60px rgba(238, 241, 245, 0.28);
                 }
@@ -247,6 +254,7 @@
                 .wordmark-dot {
                     animation: none;
                 }
+
                 .project-showcase.metal-active {
                     animation: none;
                 }
@@ -261,6 +269,7 @@
                 --accent: #05070c;
                 --shadow: 5px 5px 0 #05070c;
                 --hover-ink: #ffffff;
+
                 border-color: rgba(5, 7, 12, 0.22);
                 background: var(--metal-gradient);
                 color: #05070c;
@@ -294,9 +303,11 @@
                 width: 14px;
                 height: 14px;
             }
+
             .nav-link:hover {
                 box-shadow: 0 0 24px rgba(238, 241, 245, 0.3);
             }
+
             .nav-link:focus-visible,
             .social-card:focus-visible {
                 outline: 3px solid var(--accent);
@@ -428,13 +439,21 @@
                 line-height: 1.5;
             }
 
+            /* Project grid */
+
+            .intro-project-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+                margin-top: 28px;
+            }
+
             .intro-project-link {
                 display: flex;
                 align-items: center;
                 gap: 16px;
-                max-width: 440px;
-                margin-top: 28px;
-                padding: 16px 20px;
+                width: 100%;
+                padding: 24px;
                 border: 1px solid rgba(199, 209, 219, 0.35);
                 border-radius: 20px;
                 background: linear-gradient(
@@ -463,6 +482,13 @@
             .intro-project-icon i {
                 width: 20px;
                 height: 20px;
+            }
+
+            .intro-project-icon img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: contain;
             }
 
             .intro-project-body {
@@ -541,6 +567,8 @@
             .section-label span:last-child {
                 color: var(--accent);
             }
+
+            /* Social grid */
 
             .social-grid {
                 display: grid;
@@ -677,23 +705,28 @@
                 align-items: center;
                 justify-content: space-between;
             }
+
             .card-icon {
                 width: 25px;
                 font-size: 25px;
                 line-height: 25px;
             }
+
             .arrow {
                 width: 20px;
                 height: 20px;
             }
+
             .social-kind {
                 color: var(--muted);
                 font-size: 0.7rem;
                 text-transform: uppercase;
             }
+
             .social-card:hover .social-kind {
                 color: inherit;
             }
+
             .social-name {
                 margin: 7px 0 0;
                 font-size: clamp(1.2rem, 3vw, 1.65rem);
@@ -763,6 +796,7 @@
             .project-link i.fab {
                 font-size: 1.3rem;
             }
+
             .project-link i[data-lucide] {
                 width: 18px;
                 height: 18px;
@@ -874,6 +908,7 @@
             .flow-phase {
                 margin-top: 34px;
             }
+
             .flow-phase + .flow-phase {
                 margin-top: 46px;
             }
@@ -950,12 +985,15 @@
                     left: 0;
                     opacity: 0;
                 }
+
                 6% {
                     opacity: 1;
                 }
+
                 94% {
                     opacity: 1;
                 }
+
                 100% {
                     left: calc(100% - 9px);
                     opacity: 0;
@@ -1025,43 +1063,58 @@
                 text-transform: uppercase;
             }
 
+            @media (max-width: 700px) {
+                .intro-project-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
             @media (max-width: 560px) {
                 .page {
                     width: min(100% - 28px, 960px);
                     padding-top: 18px;
                 }
+
                 .topbar {
                     margin-bottom: 82px;
                 }
+
                 .social-grid {
                     grid-template-columns: 1fr;
                 }
+
                 .social-card {
                     min-height: 134px;
                 }
+
                 .footer {
                     gap: 12px;
                     flex-direction: column;
                 }
+
                 .step-grid {
                     grid-template-columns: 1fr;
                 }
+
                 .flow-steps li {
                     flex-direction: column;
                     gap: 6px;
                 }
+
                 .intro-project-link {
-                    max-width: 100%;
-                    padding: 14px 16px;
+                    padding: 18px;
                 }
+
                 .intro-project-arrow {
                     display: none;
                 }
             }
         </style>
     </head>
+
     <body>
         <div class="grid-glow" aria-hidden="true"></div>
+
         <main class="page">
             <header class="topbar">
                 <button
@@ -1073,60 +1126,123 @@
                     <span class="wordmark-dot" aria-hidden="true"></span>
                     <span>shakamal</span>
                 </button>
+
                 <div>
-                    <a class="nav-link" href="#voidcut-project"
-                        ><span>voidcut</span
-                        ><i data-lucide="arrow-up-right" aria-hidden="true"></i
-                    ></a>
-                    <a class="nav-link" href="./cutmark/index.html"
-                        ><span>cutmark</span
-                        ><i data-lucide="arrow-up-right" aria-hidden="true"></i
-                    ></a>
+                    <a class="nav-link" href="#voidcut-project">
+                        <span>voidcut</span>
+                        <i
+                            data-lucide="arrow-up-right"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
+
+                    <a class="nav-link" href="./cutmark/index.html">
+                        <span>cutmark</span>
+                        <i
+                            data-lucide="arrow-up-right"
+                            aria-hidden="true"
+                        ></i>
+                    </a>
                 </div>
             </header>
 
             <section class="intro" aria-labelledby="page-title">
                 <p class="eyebrow">Developer portfolio</p>
+
                 <div class="title-row">
                     <h1 id="page-title">
-                        <span class="title-name">Sha Kamal</span
-                        ><span class="title-alias metal-text"
-                            >fullstack developer</span
-                        >
+                        <span class="title-name">Sha Kamal</span>
+                        <span class="title-alias metal-text">
+                            fullstack developer
+                        </span>
                     </h1>
+
                     <div class="image-frame">
-                        <img class="title-image" src="images/pic.png" alt="" />
+                        <img
+                            class="title-image"
+                            src="images/pic.png"
+                            alt=""
+                        />
                     </div>
                 </div>
+
                 <p class="intro-copy">
                     Backend heavy full stack engineer crafting scalable systems
                     and the infrastructure behind bold digital experiences.
                 </p>
-                <a class="intro-project-link" href="#voidcut-project">
-                    <span class="intro-project-icon"
-                        ><i data-lucide="film" aria-hidden="true"></i
-                    ></span>
-                    <span class="intro-project-body">
-                        <span class="intro-project-eyebrow"
-                            >Featured build</span
-                        >
-                        <span class="intro-project-name metal-text"
-                            >Voidcut</span
-                        >
-                        <span class="intro-project-tag"
-                            >Event-driven video editor - Go microservices</span
-                        >
-                    </span>
-                    <span class="intro-project-arrow"
-                        ><i data-lucide="arrow-right" aria-hidden="true"></i
-                    ></span>
-                </a>
+
+                <div class="intro-project-grid">
+                    <!-- Voidcut -->
+                    <a
+                        class="intro-project-link"
+                        href="#voidcut-project"
+                    >
+                        <span class="intro-project-icon">
+                            <i
+                                data-lucide="film"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+
+                        <span class="intro-project-body">
+                            <span class="intro-project-name metal-text">
+                                Voidcut
+                            </span>
+
+                            <span class="intro-project-tag">
+                                Event-driven video editor - Go microservices
+                            </span>
+                        </span>
+
+                        <span class="intro-project-arrow">
+                            <i
+                                data-lucide="arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+                    </a>
+
+                    <!-- Cutmark -->
+                    <a
+                        class="intro-project-link"
+                        href="./cutmark/index.html"
+                    >
+                        <span class="intro-project-icon">
+                            <img
+                                src="./images/cutmark-icon.png"
+                                alt="Cutmark"
+                            />
+                        </span>
+
+                        <span class="intro-project-body">
+                            <span class="intro-project-name metal-text">
+                                Cutmark
+                            </span>
+
+                            <span class="intro-project-tag">
+                                Desktop Screen Recorder & Live Marking Tool
+                            </span>
+                        </span>
+
+                        <span class="intro-project-arrow">
+                            <i
+                                data-lucide="arrow-right"
+                                aria-hidden="true"
+                            ></i>
+                        </span>
+                    </a>
+                </div>
             </section>
 
-            <section class="links-section" aria-label="Social links">
+            <section
+                class="links-section"
+                aria-label="Social links"
+            >
                 <div class="section-label">
-                    <span>Find me online</span><span>05 links</span>
+                    <span>Find me online</span>
+                    <span>05 links</span>
                 </div>
+
                 <div class="social-grid">
                     <a
                         class="social-card social-card-github"
@@ -1138,13 +1254,15 @@
                             <i
                                 class="card-icon fab fa-github"
                                 aria-hidden="true"
-                            ></i
-                            ><i
+                            ></i>
+
+                            <i
                                 class="arrow"
                                 data-lucide="arrow-up-right"
                                 aria-hidden="true"
                             ></i>
                         </div>
+
                         <div class="card-bottom">
                             <div>
                                 <span class="social-kind">Code</span>
@@ -1152,6 +1270,7 @@
                             </div>
                         </div>
                     </a>
+
                     <a
                         class="social-card social-card-youtube"
                         href="https://www.youtube.com/@shakamalpro"
@@ -1162,13 +1281,15 @@
                             <i
                                 class="card-icon fab fa-youtube"
                                 aria-hidden="true"
-                            ></i
-                            ><i
+                            ></i>
+
+                            <i
                                 class="arrow"
                                 data-lucide="arrow-up-right"
                                 aria-hidden="true"
                             ></i>
                         </div>
+
                         <div class="card-bottom">
                             <div>
                                 <span class="social-kind">Video</span>
@@ -1176,6 +1297,7 @@
                             </div>
                         </div>
                     </a>
+
                     <a
                         class="social-card social-card-linkedin"
                         href="https://www.linkedin.com/in/shakamalpro/"
@@ -1186,13 +1308,15 @@
                             <i
                                 class="card-icon fab fa-linkedin"
                                 aria-hidden="true"
-                            ></i
-                            ><i
+                            ></i>
+
+                            <i
                                 class="arrow"
                                 data-lucide="arrow-up-right"
                                 aria-hidden="true"
                             ></i>
                         </div>
+
                         <div class="card-bottom">
                             <div>
                                 <span class="social-kind">Network</span>
@@ -1200,6 +1324,7 @@
                             </div>
                         </div>
                     </a>
+
                     <a
                         class="social-card social-card-email"
                         href="mailto:kamalshanthpro@gmail.com"
@@ -1208,13 +1333,15 @@
                             <i
                                 class="card-icon far fa-envelope"
                                 aria-hidden="true"
-                            ></i
-                            ><i
+                            ></i>
+
+                            <i
                                 class="arrow"
                                 data-lucide="arrow-up-right"
                                 aria-hidden="true"
                             ></i>
                         </div>
+
                         <div class="card-bottom">
                             <div>
                                 <span class="social-kind">Contact</span>
@@ -1222,6 +1349,7 @@
                             </div>
                         </div>
                     </a>
+
                     <a
                         class="social-card social-card-phone"
                         href="tel:+94777914656"
@@ -1230,17 +1358,21 @@
                             <i
                                 class="card-icon fas fa-phone"
                                 aria-hidden="true"
-                            ></i
-                            ><i
+                            ></i>
+
+                            <i
                                 class="arrow"
                                 data-lucide="arrow-up-right"
                                 aria-hidden="true"
                             ></i>
                         </div>
+
                         <div class="card-bottom">
                             <div>
                                 <span class="social-kind">Contact</span>
-                                <p class="social-name">+94 777 914 656</p>
+                                <p class="social-name">
+                                    +94 777 914 656
+                                </p>
                             </div>
                         </div>
                     </a>
@@ -1253,11 +1385,17 @@
                 aria-labelledby="voidcut-title"
             >
                 <div class="section-label">
-                    <span>Project blueprint</span><span>voidcut</span>
+                    <span>Project blueprint</span>
+                    <span>voidcut</span>
                 </div>
-                <h2 id="voidcut-title" class="project-heading metal-text">
+
+                <h2
+                    id="voidcut-title"
+                    class="project-heading metal-text"
+                >
                     Voidcut
                 </h2>
+
                 <p class="project-lead">
                     A smart video editor that runs in the background while you
                     record. Logs mic and keyboard activity in real time, then
@@ -1273,24 +1411,38 @@
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i class="fab fa-github" aria-hidden="true"></i
-                        ><span>View Source on GitHub</span
-                        ><i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        <i
+                            class="fab fa-github"
+                            aria-hidden="true"
+                        ></i>
+                        <span>View Source on GitHub</span>
+                        <i
+                            data-lucide="arrow-up-right"
+                            aria-hidden="true"
+                        ></i>
                     </a>
+
                     <a
                         class="project-link youtube"
                         href="https://www.youtube.com/watch?v=0eeNcQl-3kk&list=PLArzqnXriXoQ"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i class="fab fa-youtube" aria-hidden="true"></i
-                        ><span>View Playlist on YouTube</span
-                        ><i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        <i
+                            class="fab fa-youtube"
+                            aria-hidden="true"
+                        ></i>
+                        <span>View Playlist on YouTube</span>
+                        <i
+                            data-lucide="arrow-up-right"
+                            aria-hidden="true"
+                        ></i>
                     </a>
                 </div>
 
                 <div class="project-block">
                     <h3 class="project-block-title">The Problem</h3>
+
                     <div class="step-grid">
                         <article class="step-card">
                             <span class="step-num">01</span>
@@ -1301,6 +1453,7 @@
                                 looking back and forth.
                             </p>
                         </article>
+
                         <article class="step-card">
                             <span class="step-num">02</span>
                             <h4>Dead air accumulates</h4>
@@ -1310,6 +1463,7 @@
                                 stillness builds up in the recording.
                             </p>
                         </article>
+
                         <article class="step-card">
                             <span class="step-num">03</span>
                             <h4>Manual editing is painful</h4>
@@ -1324,6 +1478,7 @@
 
                 <div class="project-block">
                     <h3 class="project-block-title">The Solution</h3>
+
                     <div class="step-grid">
                         <article class="step-card">
                             <span class="step-num">01</span>
@@ -1333,6 +1488,7 @@
                                 silently - no UI in the way.
                             </p>
                         </article>
+
                         <article class="step-card">
                             <span class="step-num">02</span>
                             <h4>Real-time activity logging</h4>
@@ -1342,6 +1498,7 @@
                                 via NATS.
                             </p>
                         </article>
+
                         <article class="step-card">
                             <span class="step-num">03</span>
                             <h4>Upload your raw video</h4>
@@ -1350,6 +1507,7 @@
                                 Voidcut already has your activity log ready.
                             </p>
                         </article>
+
                         <article class="step-card">
                             <span class="step-num">04</span>
                             <h4>Process and download</h4>
@@ -1364,7 +1522,10 @@
                 </div>
 
                 <div class="project-block">
-                    <h3 class="project-block-title">End to End Data Flow</h3>
+                    <h3 class="project-block-title">
+                        End to End Data Flow
+                    </h3>
+
                     <p class="project-block-lead">
                         Exactly what happens from the moment you start
                         recording, through video upload and processing, to the
@@ -1372,16 +1533,27 @@
                     </p>
 
                     <div class="flow-phase">
-                        <h4 class="flow-phase-title">Recording Phase</h4>
-                        <div class="flow-diagram" aria-hidden="true">
+                        <h4 class="flow-phase-title">
+                            Recording Phase
+                        </h4>
+
+                        <div
+                            class="flow-diagram"
+                            aria-hidden="true"
+                        >
                             <div class="flow-track">
                                 <span class="flow-node">Agent</span>
                                 <span class="flow-node">NATS</span>
-                                <span class="flow-node">ActivityService</span>
-                                <span class="flow-node">PostgreSQL</span>
+                                <span class="flow-node">
+                                    ActivityService
+                                </span>
+                                <span class="flow-node">
+                                    PostgreSQL
+                                </span>
                                 <span class="flow-dot"></span>
                             </div>
                         </div>
+
                         <ol class="flow-steps">
                             <li>
                                 <span class="flow-step-num">01</span>
@@ -1392,17 +1564,24 @@
                                         goroutine and input listener goroutine
                                         concurrently. Connects to NATS.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">goroutines</span
-                                        ><span class="tag">NATS connect</span>
+                                        <span class="tag">
+                                            goroutines
+                                        </span>
+                                        <span class="tag">
+                                            NATS connect
+                                        </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">02</span>
                                 <div>
                                     <h5>
-                                        You start your screen recorder and begin
+                                        You start your screen recorder and
+                                        begin
                                     </h5>
                                     <p>
                                         Voidcut is already listening. Every time
@@ -1410,23 +1589,30 @@
                                     </p>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">03</span>
                                 <div>
-                                    <h5>Activity events stream to NATS</h5>
+                                    <h5>
+                                        Activity events stream to NATS
+                                    </h5>
                                     <p>
                                         Events carry: session_id, type
                                         (mic|keyboard), timestamp, duration.
                                         Published to activity.events topic.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">NATS publish</span
-                                        ><span class="tag"
-                                            >activity.events</span
-                                        >
+                                        <span class="tag">
+                                            NATS publish
+                                        </span>
+                                        <span class="tag">
+                                            activity.events
+                                        </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">04</span>
                                 <div>
@@ -1438,28 +1624,36 @@
                                         each event to PostgreSQL with
                                         microsecond precision timestamps.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">NATS consume</span
-                                        ><span class="tag"
-                                            >PostgreSQL insert</span
-                                        >
+                                        <span class="tag">
+                                            NATS consume
+                                        </span>
+                                        <span class="tag">
+                                            PostgreSQL insert
+                                        </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">05</span>
                                 <div>
-                                    <h5>Recording ends - you stop the agent</h5>
+                                    <h5>
+                                        Recording ends - you stop the agent
+                                    </h5>
                                     <p>
                                         SIGINT triggers graceful shutdown.
                                         Remaining events are flushed before
                                         exit, leaving the activity log ready for
                                         the later video upload.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag"
-                                            >graceful shutdown</span
-                                        ><span class="tag">flush</span>
+                                        <span class="tag">
+                                            graceful shutdown
+                                        </span>
+                                        <span class="tag">flush</span>
                                     </div>
                                 </div>
                             </li>
@@ -1467,49 +1661,80 @@
                     </div>
 
                     <div class="flow-phase">
-                        <h4 class="flow-phase-title">Editing Phase</h4>
-                        <div class="flow-diagram" aria-hidden="true">
+                        <h4 class="flow-phase-title">
+                            Editing Phase
+                        </h4>
+
+                        <div
+                            class="flow-diagram"
+                            aria-hidden="true"
+                        >
                             <div class="flow-track">
-                                <span class="flow-node">API Gateway</span>
-                                <span class="flow-node">VideoService</span>
+                                <span class="flow-node">
+                                    API Gateway
+                                </span>
+                                <span class="flow-node">
+                                    VideoService
+                                </span>
                                 <span class="flow-node">NATS</span>
-                                <span class="flow-node">AnalysisService</span>
-                                <span class="flow-node">EditingService</span>
+                                <span class="flow-node">
+                                    AnalysisService
+                                </span>
+                                <span class="flow-node">
+                                    EditingService
+                                </span>
                                 <span class="flow-node">FFmpeg</span>
                                 <span class="flow-dot"></span>
                             </div>
                         </div>
+
                         <ol class="flow-steps">
                             <li>
                                 <span class="flow-step-num">06</span>
                                 <div>
-                                    <h5>Upload raw video via API</h5>
+                                    <h5>
+                                        Upload raw video via API
+                                    </h5>
                                     <p>
                                         POST /api/v1/jobs with video file and
                                         session_id. API Gateway routes to
                                         VideoService.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">HTTP multipart</span
-                                        ><span class="tag">API Gateway</span>
+                                        <span class="tag">
+                                            HTTP multipart
+                                        </span>
+                                        <span class="tag">
+                                            API Gateway
+                                        </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">07</span>
                                 <div>
-                                    <h5>VideoService stores and emits</h5>
+                                    <h5>
+                                        VideoService stores and emits
+                                    </h5>
                                     <p>
                                         Validates video, stores to disk, creates
                                         job record in PostgreSQL with status:
                                         pending. Publishes job.created to NATS.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">NATS publish</span
-                                        ><span class="tag">job.created</span>
+                                        <span class="tag">
+                                            NATS publish
+                                        </span>
+                                        <span class="tag">
+                                            job.created
+                                        </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">08</span>
                                 <div>
@@ -1523,17 +1748,27 @@
                                         side. Inverts to get cut list. Caches
                                         result in Redis.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">PostgreSQL read</span
-                                        ><span class="tag">Redis cache</span
-                                        ><span class="tag">interval logic</span>
+                                        <span class="tag">
+                                            PostgreSQL read
+                                        </span>
+                                        <span class="tag">
+                                            Redis cache
+                                        </span>
+                                        <span class="tag">
+                                            interval logic
+                                        </span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">09</span>
                                 <div>
-                                    <h5>EditingService runs FFmpeg via gRPC</h5>
+                                    <h5>
+                                        EditingService runs FFmpeg via gRPC
+                                    </h5>
                                     <p>
                                         AnalysisService calls
                                         EditingService.Edit(job_id,
@@ -1541,18 +1776,21 @@
                                         builds filter_complex, runs FFmpeg
                                         subprocess, stores output.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">gRPC</span
-                                        ><span class="tag">FFmpeg</span
-                                        ><span class="tag">os/exec</span>
+                                        <span class="tag">gRPC</span>
+                                        <span class="tag">FFmpeg</span>
+                                        <span class="tag">os/exec</span>
                                     </div>
                                 </div>
                             </li>
+
                             <li>
                                 <span class="flow-step-num">10</span>
                                 <div>
                                     <h5>
-                                        Notification fires - download your video
+                                        Notification fires - download your
+                                        video
                                     </h5>
                                     <p>
                                         job.done event published.
@@ -1561,10 +1799,13 @@
                                         /api/v1/jobs/:id/download returns edited
                                         video.
                                     </p>
+
                                     <div class="tag-row">
-                                        <span class="tag">NATS</span
-                                        ><span class="tag">job.done</span
-                                        ><span class="tag">HTTP download</span>
+                                        <span class="tag">NATS</span>
+                                        <span class="tag">job.done</span>
+                                        <span class="tag">
+                                            HTTP download
+                                        </span>
                                     </div>
                                 </div>
                             </li>
@@ -1574,8 +1815,8 @@
             </section>
 
             <footer class="footer">
-                <span>© 2026 shakamal</span
-                ><span>Available for interesting work</span>
+                <span>© 2026 Sha Kamal</span>
+                <span>Available for interesting work</span>
             </footer>
         </main>
 
@@ -1584,11 +1825,13 @@
             id="current-line-left"
             aria-hidden="true"
         ></div>
+
         <div
             class="current-line current-line-v"
             id="current-line-down"
             aria-hidden="true"
         ></div>
+
         <div
             class="current-line current-line-h"
             id="current-line-right"
@@ -1599,33 +1842,54 @@
             lucide.createIcons();
 
             const rootEl = document.documentElement;
+
             window.addEventListener("mousemove", (e) => {
                 rootEl.style.setProperty("--mx", e.clientX + "px");
                 rootEl.style.setProperty("--my", e.clientY + "px");
             });
 
-            const beamTrigger = document.getElementById("voidcut-beam-trigger");
-            const lineLeft = document.getElementById("current-line-left");
-            const lineDown = document.getElementById("current-line-down");
-            const lineRight = document.getElementById("current-line-right");
-            const voidcutSection = document.getElementById("voidcut-project");
-            const voidcutTitle = document.getElementById("voidcut-title");
+            const beamTrigger =
+                document.getElementById("voidcut-beam-trigger");
+
+            const lineLeft =
+                document.getElementById("current-line-left");
+
+            const lineDown =
+                document.getElementById("current-line-down");
+
+            const lineRight =
+                document.getElementById("current-line-right");
+
+            const voidcutSection =
+                document.getElementById("voidcut-project");
+
+            const voidcutTitle =
+                document.getElementById("voidcut-title");
 
             function easeInOutQuad(t) {
-                return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+                return t < 0.5
+                    ? 2 * t * t
+                    : 1 - Math.pow(-2 * t + 2, 2) / 2;
             }
 
             function tween(duration, onUpdate, onDone) {
                 const start = performance.now();
+
                 function step(now) {
-                    const t = Math.min((now - start) / duration, 1);
+                    const t = Math.min(
+                        (now - start) / duration,
+                        1,
+                    );
+
                     onUpdate(easeInOutQuad(t));
+
                     if (t < 1) {
                         requestAnimationFrame(step);
                     } else if (onDone) {
                         onDone();
                     }
                 }
+
                 requestAnimationFrame(step);
             }
 
@@ -1633,37 +1897,80 @@
                 const dotRect = beamTrigger
                     .querySelector(".wordmark-dot")
                     .getBoundingClientRect();
-                const titleRect = voidcutTitle.getBoundingClientRect();
+
+                const titleRect =
+                    voidcutTitle.getBoundingClientRect();
+
                 const pageRect = document
                     .querySelector(".page")
                     .getBoundingClientRect();
 
                 const startX =
-                    dotRect.left + dotRect.width / 2 + window.scrollX;
+                    dotRect.left +
+                    dotRect.width / 2 +
+                    window.scrollX;
+
                 const startY =
-                    dotRect.top + dotRect.height / 2 + window.scrollY;
+                    dotRect.top +
+                    dotRect.height / 2 +
+                    window.scrollY;
+
                 const targetY =
-                    titleRect.top + titleRect.height / 2 + window.scrollY;
-                const targetX = titleRect.left + window.scrollX;
-                let railX = Math.max(8, pageRect.left + window.scrollX - 22);
+                    titleRect.top +
+                    titleRect.height / 2 +
+                    window.scrollY;
+
+                const targetX =
+                    titleRect.left +
+                    window.scrollX;
+
+                let railX = Math.max(
+                    8,
+                    pageRect.left +
+                        window.scrollX -
+                        22,
+                );
+
                 if (startX - railX < 100) {
-                    railX = Math.max(8, startX - 100);
+                    railX = Math.max(
+                        8,
+                        startX - 100,
+                    );
                 }
 
-                const leftDistance = Math.max(startX - railX, 0);
-                const dropDistance = Math.max(targetY - startY, 0);
-                const rightDistance = Math.max(targetX - railX, 0);
-                const maxScroll = Math.max(
-                    document.documentElement.scrollHeight - window.innerHeight,
+                const leftDistance = Math.max(
+                    startX - railX,
                     0,
                 );
 
-                voidcutSection.classList.remove("metal-active");
-                [lineLeft, lineDown, lineRight].forEach((el) =>
+                const dropDistance = Math.max(
+                    targetY - startY,
+                    0,
+                );
+
+                const rightDistance = Math.max(
+                    targetX - railX,
+                    0,
+                );
+
+                const maxScroll = Math.max(
+                    document.documentElement.scrollHeight -
+                        window.innerHeight,
+                    0,
+                );
+
+                voidcutSection.classList.remove(
+                    "metal-active",
+                );
+
+                [
+                    lineLeft,
+                    lineDown,
+                    lineRight,
+                ].forEach((el) =>
                     el.classList.remove("active"),
                 );
 
-                // phase 1: step left, clearing the page content, before heading down
                 lineLeft.style.top = startY + "px";
                 lineLeft.style.left = startX + "px";
                 lineLeft.style.width = "0px";
@@ -1673,58 +1980,89 @@
                     500,
                     (p) => {
                         const w = leftDistance * p;
+
                         lineLeft.style.width = w + "px";
-                        lineLeft.style.left = startX - w + "px";
+                        lineLeft.style.left =
+                            startX - w + "px";
                     },
                     () => {
-                        // phase 2: straight down along the clear side rail, scroll follows the edge
-                        lineDown.style.top = startY + "px";
-                        lineDown.style.left = railX + "px";
+                        lineDown.style.top =
+                            startY + "px";
+
+                        lineDown.style.left =
+                            railX + "px";
+
                         lineDown.style.height = "0px";
-                        lineDown.classList.add("active");
+
+                        lineDown.classList.add(
+                            "active",
+                        );
 
                         tween(
                             2400,
                             (p) => {
-                                const h = dropDistance * p;
-                                lineDown.style.height = h + "px";
-                                const edgeY = startY + h;
-                                const desired = Math.min(
-                                    Math.max(
-                                        edgeY - window.innerHeight * 0.4,
-                                        0,
-                                    ),
-                                    maxScroll,
-                                );
+                                const h =
+                                    dropDistance * p;
+
+                                lineDown.style.height =
+                                    h + "px";
+
+                                const edgeY =
+                                    startY + h;
+
+                                const desired =
+                                    Math.min(
+                                        Math.max(
+                                            edgeY -
+                                                window.innerHeight *
+                                                    0.4,
+                                            0,
+                                        ),
+                                        maxScroll,
+                                    );
+
                                 window.scrollTo({
                                     top: desired,
                                     behavior: "auto",
                                 });
                             },
                             () => {
-                                // phase 3: strike right to touch the title and light up the section
-                                lineRight.style.top = targetY + "px";
-                                lineRight.style.left = railX + "px";
-                                lineRight.style.width = "0px";
-                                lineRight.classList.add("active");
+                                lineRight.style.top =
+                                    targetY + "px";
+
+                                lineRight.style.left =
+                                    railX + "px";
+
+                                lineRight.style.width =
+                                    "0px";
+
+                                lineRight.classList.add(
+                                    "active",
+                                );
 
                                 tween(
                                     450,
                                     (p) => {
                                         lineRight.style.width =
-                                            rightDistance * p + "px";
+                                            rightDistance *
+                                                p +
+                                            "px";
                                     },
                                     () => {
                                         voidcutSection.classList.add(
                                             "metal-active",
                                         );
+
                                         setTimeout(() => {
                                             [
                                                 lineLeft,
                                                 lineDown,
                                                 lineRight,
-                                            ].forEach((el) =>
-                                                el.classList.remove("active"),
+                                            ].forEach(
+                                                (el) =>
+                                                    el.classList.remove(
+                                                        "active",
+                                                    ),
                                             );
                                         }, 350);
                                     },
